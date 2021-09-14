@@ -1,0 +1,5 @@
+[user]
+	email = danielyan.vahe@gmail.com
+    name = Vahe Danielyan
+[diff]
+    tool = vimdiff
