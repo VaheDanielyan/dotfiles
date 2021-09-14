@@ -68,6 +68,11 @@ alias ipar='curl ipinfo.io/ip'
 alias ipal='ifconfig getifaddr en0'
 alias sag='sudo apt-get'
 
+#tmux 
+
+alias tmkill='tmux kill-session -t'
+alias tmat='tmux attach -t'
+alias tmls='tmux ls'
 function hgrep(){
     history|grep $1;
 }
