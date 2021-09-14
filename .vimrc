@@ -22,6 +22,7 @@ set noswapfile
 set incsearch
 set wildmenu
 set cmdheight=2
+set visualbell
 
 "plugin manager
 set encoding=UTF-8

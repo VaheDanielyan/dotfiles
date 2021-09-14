@@ -18,7 +18,6 @@
 shopt -s histappend
 shopt -s checkwinsize
 shopt -s autocd
-stty -ixon
 
 #history, locale
 HISTSIZE=2000
@@ -84,3 +83,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+#disable bell
+bind 'set bell-style none'
+
