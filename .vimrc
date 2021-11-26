@@ -13,7 +13,9 @@
 
 
 
-set tabstop=2 softtabstop=2
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
 set exrc
 set relativenumber
 set nu
@@ -22,7 +24,6 @@ set noswapfile
 set incsearch
 set wildmenu
 set cmdheight=2
-set visualbell
 
 "plugin manager
 set encoding=UTF-8
@@ -57,6 +58,4 @@ Plug 'vhdirk/vim-cmake'
 Plug 'bfrg/vim-cpp-modern'
 call plug#end()
 
-"Mapping alt to Toggle NERD
-map <Tab> :NERDTreeToggle<CR>
-color onedark 
+color onedark

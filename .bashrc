@@ -17,10 +17,9 @@
 #shopt options
 shopt -s histappend
 shopt -s checkwinsize
-shopt -s autocd
 
 #history, locale
-HISTSIZE=2000
+HISTSIZE=30000
 HISTCONTROL=ignoreboth
 HISTFILESIZE=2000
 export LC_ALL=en_US.UTF-8
@@ -63,16 +62,12 @@ alias la='ls -A'
 alias l='ls -CF'
 
 #preference aliases
-alias untar='tar -zxvf'
+alias untar='tar -xvzf'
 alias ipar='curl ipinfo.io/ip'
 alias ipal='ifconfig getifaddr en0'
 alias sag='sudo apt-get'
+alias klir='clear'
 
-#tmux 
-
-alias tmkill='tmux kill-session -t'
-alias tmat='tmux attach -t'
-alias tmls='tmux ls'
 function hgrep(){
     history|grep $1;
 }
@@ -88,6 +83,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-#disable bell
-bind 'set bell-style none'
 
+shopt -s autocd
+. "$HOME/.cargo/env"
