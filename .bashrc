@@ -21,7 +21,7 @@ shopt -s checkwinsize
 #history, locale
 HISTSIZE=30000
 HISTCONTROL=ignoreboth
-HISTFILESIZE=2000
+HISTFILESIZE=30000
 export LC_ALL=en_US.UTF-8
 
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
