@@ -49,7 +49,7 @@ install_alacritty:
 .PHONY : install_visual
 install_visual:
 	git submodule init && git submodule update
-	#./Tela-icon-theme/install.sh
+	./Tela-icon-theme/install.sh
 	./Yaru-Colors/install.sh
 .PHONY : shell-extentions ## TODO, doesnt work yet
 shell-extentions:
