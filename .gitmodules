@@ -4,3 +4,6 @@
 [submodule "Yaru-Colors"]
 	path = Yaru-Colors
 	url = https://github.com/Jannomag/Yaru-Colors
+[submodule "alacritty"]
+	path = alacritty
+	url = https://github.com/alacritty/alacritty
