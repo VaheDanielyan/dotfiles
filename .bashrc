@@ -66,7 +66,12 @@ alias untar='tar -xvzf'
 alias ipar='curl ipinfo.io/ip'
 alias ipal='ifconfig getifaddr en0'
 alias sag='sudo apt-get'
-alias klir='clear'
+alias vim='nvim'
+alias vimrc='vim ~/.vimrc'
+alias bashrc='vim ~/.bashrc'
+alias ubashrc='source ~/.bashrc'
+alias clangd='clangd-12'
+alias python='python3'
 
 function hgrep(){
     history|grep $1;
@@ -86,3 +91,7 @@ fi
 
 shopt -s autocd
 . "$HOME/.cargo/env"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

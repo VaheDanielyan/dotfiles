@@ -27,6 +27,8 @@ install_packages:
 	sudo snap install signal-desktop
 	sudo snap install telegram-desktop
 	sudo snap install discord
+	sudo snap install notion-snap
+
 	# pip
 	echo "INSTALLING PIP PACKAGES"
 	pip install pyserial
