@@ -2,6 +2,11 @@
   "python.linting.enabled" : true,
   "python.linting.pylintEnabled" : true,
   "languageserver": {
+    "bash": {
+        "command": "bash-language-server",
+        "args": ["start"],
+        "filetypes": ["sh"]
+    },
     "clangd": {
       "command": "clangd-12",
       "rootPatterns": ["compile_flags.txt", "compile_commands.json"],

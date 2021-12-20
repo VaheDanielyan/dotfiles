@@ -2,4 +2,6 @@
 	email = danielyan.vahe@gmail.com
     name = Vahe Danielyan
 [diff]
-    tool = vimdiff
+	tool = vimdiff
+[difftool]
+	prompt = false

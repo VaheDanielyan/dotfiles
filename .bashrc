@@ -72,6 +72,8 @@ alias bashrc='vim ~/.bashrc'
 alias ubashrc='source ~/.bashrc'
 alias clangd='clangd-12'
 alias python='python3'
+alias work='cd /home/daniev/Documents/Work'
+alias meghu='cd /home/daniev/Documents/Work/meghu'
 
 function hgrep(){
     history|grep $1;
