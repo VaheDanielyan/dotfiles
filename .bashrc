@@ -2,11 +2,8 @@
 ######################################################################
 #
 #
-#           ██████╗  █████╗ ███████╗██╗  ██╗██████╗  ██████╗
-#           ██╔══██╗██╔══██╗██╔════╝██║  ██║██╔══██╗██╔════╝
-#           ██████╔╝███████║███████╗███████║██████╔╝██║     
-#           ██╔══██╗██╔══██║╚════██║██╔══██║██╔══██╗██║     
-#           ██████╔╝██║  ██║███████║██║  ██║██║  ██║╚██████╗
+#           ██████╗  █████╗ ███████╗██╗  ██╗██████╗  ██████╗ ██╔══██╗██╔══██╗██╔════╝██║  ██║██╔══██╗██╔════╝
+#           ██████╔╝███████║███████╗███████║██████╔╝██║     ██╔══██╗██╔══██║╚════██║██╔══██║██╔══██╗██║     ██████╔╝██║  ██║███████║██║  ██║██║  ██║╚██████╗
 #           ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
 #
 #
@@ -17,6 +14,8 @@
 #shopt options
 shopt -s histappend
 shopt -s checkwinsize
+
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[01;36m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 #history, locale
 HISTSIZE=30000
@@ -74,11 +73,22 @@ alias clangd='clangd-12'
 alias python='python3'
 alias work='cd /home/daniev/Documents/Work'
 alias meghu='cd /home/daniev/Documents/Work/meghu'
+alias arinjsim='~/Documents/Work/ardupilot/Tools/autotest/sim_vehicle.py -f plane -v ArduPlane -m "--out 192.168.8.237:14550 --out 127.0.0.1:14550" -L Arinj'
+alias arinjsimloc='~/Documents/Work/ardupilot/Tools/autotest/sim_vehicle.py -f plane -v ArduPlane -m "--out 10.2.0.42:14550 --out 127.0.0.1:14550" -L Arinj'
+alias qgr='./Documents/Work/Tools/QGroundControl.AppImage'
+
+force_color_prompt=yes
+
 
 function hgrep(){
     history|grep $1;
 }
 
+function trash() {
+    mv $1 ~/.trash
+}
+
+# export PATH="$PATH:$HOME/gcc-arm-none-eabi/bin"
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -93,6 +103,7 @@ fi
 
 shopt -s autocd
 . "$HOME/.cargo/env"
+export EDITOR=nvim
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
