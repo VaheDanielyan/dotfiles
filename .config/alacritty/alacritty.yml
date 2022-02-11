@@ -10,8 +10,8 @@ env:
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  TERM: xterm-256color
-  # TERM: alacritty 
+  #TERM: xterm-256color
+  TERM: xterm-256color 
 
 window:
   # Window dimensions (changes require restart)
@@ -117,6 +117,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
+    # family: Liberation
     family: monospace
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
@@ -195,40 +196,65 @@ font:
   # effect.
   #use_thin_strokes: true
 # If `true`, bold text is drawn using the bright color variants.
-draw_bold_text_with_bright_colors: true
-
-# Colors 
+draw_bold_text_with_bright_colors: false
 colors:
+  # Default colors
   primary:
-    background: '#210b21'
-    foreground: '#FFCC66'
-    bright_foreground: '#f3f4f5'
-
-  cursor:
-    text: '#212121'
-    cursor: '#c0c5ce'
+    background: '0x0A0E14'
+    foreground: '0xB3B1AD'
 
   # Normal colors
   normal:
-    black: '#212121'
-    red: '#e57373'
-    green: '#a6bc69'
-    yellow: '#fac863'
-    blue: '#6699cc'
-    magenta: '#c594c5'
-    cyan: '#5fb3b3'
-    white: '#c0c5ce'
+    black:   '0x01060E'
+    red:     '0xEA6C73'
+    green:   '0x91B362'
+    yellow:  '0xF9AF4F'
+    blue:    '0x53BDFA'
+    magenta: '0xFAE994'
+    cyan:    '0x90E1C6'
+    white:   '0xC7C7C7'
 
   # Bright colors
   bright:
-    black: '#5c5c5c'
-    red: '#e57373'
-    green: '#a6bc69'
-    yellow: '#fac863'
-    blue: '#6699cc'
-    magenta: '#c594c5'
-    cyan: '#5fb3b3'
-    white: '#f3f4f5'
+    black:   '0x686868'
+    red:     '0xF07178'
+    green:   '0xC2D94C'
+    yellow:  '0xFFB454'
+    blue:    '0x59C2FF'
+    magenta: '0xFFEE99'
+    cyan:    '0x95E6CB'
+    white:   '0xFFFFFF'
+# Colors 
+#  primary:
+#    background: '#210b21'
+#    foreground: '#FFCC66'
+#    bright_foreground: '#f3f4f5'
+#
+#  cursor:
+#    text: '#212121'
+#    cursor: '#c0c5ce'
+#
+#  # Normal colors
+#  normal:
+#    black: '#212121'
+#    red: '#e57373'
+#    green: '#a6bc69'
+#    yellow: '#fac863'
+#    blue: '#6699cc'
+#    magenta: '#c594c5'
+#    cyan: '#5fb3b3'
+#    white: '#c0c5ce'
+#
+#  # Bright colors
+#  bright:
+#    black: '#5c5c5c'
+#    red: '#e57373'
+#    green: '#a6bc69'
+#    yellow: '#fac863'
+#    blue: '#6699cc'
+#    magenta: '#c594c5'
+#    cyan: '#5fb3b3'
+#    white: '#f3f4f5'
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once
@@ -261,7 +287,7 @@ colors:
 # background_opacity: 0.92
 #background_opacity: 0.80
 window:
-    opacity: 0.65
+    opacity: 0.85
 
 #selection:
 #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
