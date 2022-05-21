@@ -8,15 +8,14 @@
 #
 #
 ######################################################################
-#           Vahe Danielyan 2021. danielyan.vahe@gmail.com
+#           Vahe Danielyan 2021. danielyan.vahe@gmail.kjcom
 
 
 #shopt options
-shopt -s histappend
-shopt -s checkwinsize
+#shopt -s histappend shopt -s checkwinsize
 
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[01;36m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00;00m\]\$ '
 #history, locale
 HISTSIZE=30000
 HISTCONTROL=ignoreboth
@@ -34,12 +33,13 @@ case "$TERM" in
 esac
 
 case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
+    xterm*|rxvt*)
+        PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+        ;;
+    *)
+        ;;
 esac
+export TERM="xterm-256color"
 
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -59,7 +59,6 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
 #preference aliases
 alias untar='tar -xvzf'
 alias ipar='curl ipinfo.io/ip'
@@ -94,11 +93,11 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
 fi
 
 shopt -s autocd

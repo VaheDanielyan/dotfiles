@@ -5,14 +5,8 @@
 "                             
 "
 "    Vahe Danielyan 2021
-"
 " for neovim
-" 1 " mkdir -p ~/.local/share/nvim
-" 2 " ln -s ~/.vim ~/.local/share/nvim/site 
-" 3 " ln -s ~/.vimrc .config/nvim/init.vim
-
-
-
+" 1 " mkdir -p ~/.local/share/nvim 2 " ln -s ~/.vim ~/.local/share/nvim/site 3 " ln -s ~/.vimrc .config/nvim/init.vim
 set tabstop=4 softtabstop=4
 set encoding=UTF-8
 set shiftwidth=4
@@ -46,15 +40,19 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'junegunn/goyo.vim'
+"Plug 'junegunn/goyo.vim'
 Plug 'coldfix/hexHighlight'
 "Plug 'scrooloose/nerdtree'
 Plug 'rking/ag.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'gruvbox-community/gruvbox'
-Plug 'joshdick/onedark.vim'
-Plug 'gosukiwi/vim-atom-dark'
+"Plug 'joshdick/onedark.vim'
+"Plug 'gosukiwi/vim-atom-dark'
+Plug '~/Documents/Work/temple/'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'vhdirk/vim-cmake'
+Plug 'tomasr/molokai'
+Plug 'navarasu/onedark.nvim'
 "Plug 'bfrg/vim-cpp-modern'
 Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 "Plug 'puremourning/vimspector'
@@ -135,6 +133,17 @@ let g:multi_cursor_next_key            = '<C-n>'
 let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
+set background=dark
+if exists('+termguicolors')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+  endif
 
+
+let g:onedark_config = {
+    \ 'style': 'darker',
+\}
 syntax on
-color onedark
+colorscheme onedark
+"color onedark
