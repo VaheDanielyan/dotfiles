@@ -1,9 +1,9 @@
 [submodule "Tela-icon-theme"]
-	path = Tela-icon-theme
+	path = external/Tela-icon-theme
 	url = https://github.com/vinceliuice/Tela-icon-theme
 [submodule "Yaru-Colors"]
-	path = Yaru-Colors
+	path = external/Yaru-Colors
 	url = https://github.com/Jannomag/Yaru-Colors
 [submodule "alacritty"]
-	path = alacritty
+	path = external/alacritty
 	url = https://github.com/alacritty/alacritty

@@ -12,6 +12,7 @@ destow:
 
 .PHONY : install_packages
 install_packages:
+	git submodule update --init --recursive
 	# apt packages
 	echo "INSTALLING APT PACKAGES"
 	sudo apt-get update && sudo apt-get upgrade
@@ -43,8 +44,7 @@ install_alacritty:
 	echo "INSTALLING ALACRITTY"
 	echo "INSTALLING RUST COMPILER"
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-	git clone https://github.com/alacritty/alacritty.git
-	cd alacritty && cargo build --release
+	cd ./external/alacritty && cargo build --release
 	echo "CREATING DESKTOP ENTRY FOR ALACRITTY"
 	sudo cp alacritty/target/release/alacritty /usr/local/bin # or anywhere else in $PATH
 	sudo cp alacritty/extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
@@ -54,8 +54,8 @@ install_alacritty:
 .PHONY : install_visual
 install_visual:
 	git submodule init && git submodule update
-	./Tela-icon-theme/install.sh
-	./Yaru-Colors/install.sh
+	./external/Tela-icon-theme/install.sh
+	./external/Yaru-Colors/install.sh
 
 .PHONY : install_arm_embedded_gcc
 	curl https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
