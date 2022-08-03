@@ -3,8 +3,9 @@
 \*.code
 Makefile
 README
-Tela-icon-theme
-Yaru-Colors
+external/Tela-icon-theme
+external/Yaru-Colors
+external/alacritty
 Useful-Scripts
 
 
