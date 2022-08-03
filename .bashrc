@@ -2,9 +2,7 @@
 ######################################################################
 #
 #
-#           ██████╗  █████╗ ███████╗██╗  ██╗██████╗  ██████╗ ██╔══██╗██╔══██╗██╔════╝██║  ██║██╔══██╗██╔════╝
-#           ██████╔╝███████║███████╗███████║██████╔╝██║     ██╔══██╗██╔══██║╚════██║██╔══██║██╔══██╗██║     ██████╔╝██║  ██║███████║██║  ██║██║  ██║╚██████╗
-#           ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
+#           
 #
 #
 ######################################################################
@@ -50,6 +48,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+    
 fi
 
 # colored GCC warnings and errors
@@ -70,14 +69,9 @@ alias bashrc='vim ~/.bashrc'
 alias ubashrc='source ~/.bashrc'
 alias clangd='clangd-12'
 alias python='python3'
-alias work='cd /home/daniev/Documents/Work'
-alias meghu='cd /home/daniev/Documents/Work/meghu'
-alias arinjsim='~/Documents/Work/ardupilot/Tools/autotest/sim_vehicle.py -f plane -v ArduPlane -m "--out 192.168.8.237:14550 --out 127.0.0.1:14550" -L Arinj'
-alias arinjsimloc='~/Documents/Work/ardupilot/Tools/autotest/sim_vehicle.py -f plane -v ArduPlane -m "--out 10.2.0.42:14550 --out 127.0.0.1:14550" -L Arinj'
-alias qgr='./Documents/Work/Tools/QGroundControl.AppImage'
+alias work='cd /home/daniev/workspace'
 
 force_color_prompt=yes
-
 
 function hgrep(){
     history|grep $1;
