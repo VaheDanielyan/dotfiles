@@ -6,7 +6,9 @@
 "
 "    Vahe Danielyan 2021
 " for neovim
-" 1 " mkdir -p ~/.local/share/nvim 2 " ln -s ~/.vim ~/.local/share/nvim/site 3 " ln -s ~/.vimrc .config/nvim/init.vim
+" 1 " mkdir -p ~/.local/share/nvim
+" 2 " ln -s ~/.vim ~/.local/share/nvim/site 
+" 3 " ln -s ~/.vimrc .config/nvim/init.vim
 set tabstop=4 softtabstop=4
 set encoding=UTF-8
 set shiftwidth=4
