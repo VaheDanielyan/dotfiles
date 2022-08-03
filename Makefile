@@ -4,6 +4,7 @@
 stow :
 	echo "Stowing .vimrc, .bashrc, .tmux.conf, .config/alacritty to ~"
 	stow .
+
 .PHONY : destow
 destow:
 	echo "Destowing .vimrc, .bashrc, .tmux.conf, .config/alacritty from ~"
@@ -18,8 +19,10 @@ install_packages:
 				 gimp gnome-shell-extensions gnome-tweaks \
 				 libasio-dev python3 python3-pip libreoffice sassc \
 				 openssh-server mosh neofetch htop nmap ninja-build cargo \
-				 picocom resolvconf socat sl sqlite stlink-tools vim wget chrome-gnome-shell\
-				 pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev tmux
+				 picocom resolvconf socat sl sqlite stlink-tools vim wget chrome-gnome-shell \
+				 pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev tmux \
+				 mesa-common-dev libglu1-mesa-dev libsdl2-2.0 libsdl2-dev bear \
+
 	# snap packages
 	echo "INSTALLING SNAP PACKAGES"
 	sudo snap install code --classic
@@ -35,24 +38,29 @@ install_packages:
 	pip install pyqt5
 	pip install dronekit
 	
-
 .PHONY : install_alacritty
 install_alacritty:
 	echo "INSTALLING ALACRITTY"
 	echo "INSTALLING RUST COMPILER"
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-	#git clone https://github.com/alacritty/alacritty.git
+	git clone https://github.com/alacritty/alacritty.git
 	cd alacritty && cargo build --release
 	echo "CREATING DESKTOP ENTRY FOR ALACRITTY"
 	sudo cp alacritty/target/release/alacritty /usr/local/bin # or anywhere else in $PATH
 	sudo cp alacritty/extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
 	sudo desktop-file-install alacritty/extra/linux/Alacritty.desktop
 	sudo update-desktop-database
+
 .PHONY : install_visual
 install_visual:
 	git submodule init && git submodule update
 	./Tela-icon-theme/install.sh
 	./Yaru-Colors/install.sh
+
+.PHONY : install_arm_embedded_gcc
+	curl https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
+	tar -xvf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
+
 .PHONY : shell-extentions ## TODO, doesnt work yet
 shell-extentions:
 	# dynamics panel transparency
