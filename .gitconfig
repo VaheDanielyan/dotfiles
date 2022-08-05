@@ -2,6 +2,8 @@
 	email = danielyan.vahe@gmail.com
     name = Vahe Danielyan
 [diff]
-	tool = vimdiff
+	tool = nvim -d
 [difftool]
 	prompt = false
+[safe]
+	directory = /home/daniev/workspace/meghu/LCB
