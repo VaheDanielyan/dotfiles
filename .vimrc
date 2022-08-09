@@ -3,8 +3,7 @@
 "  \ V /| | | | | | | | | (__ 
 "   \_/ |_|_| |_| |_|_|  \___|
 "                             
-"
-"    Vahe Danielyan 2021
+" Vahe Danielyan 2021
 " for neovim
 " 1 " mkdir -p ~/.local/share/nvim
 " 2 " ln -s ~/.vim ~/.local/share/nvim/site 
@@ -56,7 +55,7 @@ Plug 'vhdirk/vim-cmake'
 Plug 'tomasr/molokai'
 Plug 'navarasu/onedark.nvim'
 "Plug 'bfrg/vim-cpp-modern'
-Plug 'neoclide/coc.nvim', {'branch' : 'release'}
+Plug 'neoclide/coc.nvim', {'tag' : 'v0.0.80', 'rtp' : 'plugin'}
 "Plug 'puremourning/vimspector'
 "let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 
@@ -142,6 +141,9 @@ if exists('+termguicolors')
     set termguicolors
   endif
 
+if &term == "alacritty"        
+  let &term = "xterm-256color"
+endif
 
 let g:onedark_config = {
     \ 'style': 'darker',

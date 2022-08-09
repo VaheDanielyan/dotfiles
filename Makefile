@@ -17,19 +17,19 @@ install_packages:
 	echo "INSTALLING APT PACKAGES"
 	sudo apt-get update && sudo apt-get upgrade
 	sudo apt-get install git cmake neovim gcc curl tree \
-				 gimp gnome-shell-extensions gnome-tweaks \
+				 gimp gnome-shell-extensions gnome-tweaks clangd-12 \
 				 libasio-dev python3 python3-pip libreoffice sassc \
 				 openssh-server mosh neofetch htop nmap ninja-build cargo \
 				 picocom resolvconf socat sl sqlite stlink-tools vim wget chrome-gnome-shell \
 				 pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev tmux \
 				 mesa-common-dev libglu1-mesa-dev libsdl2-2.0 libsdl2-dev bear \
+	#git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 	# snap packages
 	echo "INSTALLING SNAP PACKAGES"
 	sudo snap install code --classic
-	sudo snap install brave
 	sudo snap install signal-desktop
-	sudo snap install telegram-desktop
+	#sudo snap install telegram-desktop
 	sudo snap install discord
 	sudo snap install notion-snap
 
@@ -38,6 +38,9 @@ install_packages:
 	pip install pyserial
 	pip install pyqt5
 	pip install dronekit
+	pip install python-language-server
+	pip install cmake-language-server
+	# TODO. add node install for npm i -g bash-language-server
 	
 .PHONY : install_alacritty
 install_alacritty:
@@ -46,9 +49,9 @@ install_alacritty:
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 	cd ./external/alacritty && cargo build --release
 	echo "CREATING DESKTOP ENTRY FOR ALACRITTY"
-	sudo cp alacritty/target/release/alacritty /usr/local/bin # or anywhere else in $PATH
-	sudo cp alacritty/extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
-	sudo desktop-file-install alacritty/extra/linux/Alacritty.desktop
+	sudo cp ./external/alacritty/target/release/alacritty /usr/local/bin # or anywhere else in $PATH
+	sudo cp ./external/alacritty/extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+	sudo desktop-file-install ./external/alacritty/extra/linux/Alacritty.desktop
 	sudo update-desktop-database
 
 .PHONY : install_visual
