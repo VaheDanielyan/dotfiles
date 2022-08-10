@@ -55,7 +55,7 @@ Plug 'vhdirk/vim-cmake'
 Plug 'tomasr/molokai'
 Plug 'navarasu/onedark.nvim'
 "Plug 'bfrg/vim-cpp-modern'
-Plug 'neoclide/coc.nvim', {'tag' : 'v0.0.80', 'rtp' : 'plugin'}
+Plug 'neoclide/coc.nvim', {'tag' : 'v0.0.81'}
 "Plug 'puremourning/vimspector'
 "let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 

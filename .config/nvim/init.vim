@@ -1,1 +1,1 @@
-/home/daniev/.vimrc
+/home/daniev/LINUXConfig/.vimrc

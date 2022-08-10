@@ -16,13 +16,13 @@ install_packages:
 	# apt packages
 	echo "INSTALLING APT PACKAGES"
 	sudo apt-get update && sudo apt-get upgrade
-	sudo apt-get install git cmake neovim gcc curl tree \
+	sudo apt-get install git net-tools cmake neovim gcc curl tree \
 				 gimp gnome-shell-extensions gnome-tweaks clangd-12 \
-				 libasio-dev python3 python3-pip libreoffice sassc \
-				 openssh-server mosh neofetch htop nmap ninja-build cargo \
+				 libasio-dev python3 python3-pip libreoffice sassc libeigen3-dev \
+				 openssh-server mosh neofetch htop nmap ninja-build cargo libtool \
 				 picocom resolvconf socat sl sqlite stlink-tools vim wget chrome-gnome-shell \
 				 pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev tmux \
-				 mesa-common-dev libglu1-mesa-dev libsdl2-2.0 libsdl2-dev bear \
+				 mesa-common-dev libglu1-mesa-dev libsdl2-2.0 libsdl2-dev bear autoreconf libgflags2.2 libgflags-dev\
 	#git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 	# snap packages
