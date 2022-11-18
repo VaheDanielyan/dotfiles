@@ -1,8 +1,3 @@
-" __   _(_)_ __ ___  _ __ ___ 
-" \ \ / / | '_ ` _ \| '__/ __|
-"  \ V /| | | | | | | | | (__ 
-"   \_/ |_|_| |_| |_|_|  \___|
-"                             
 " Vahe Danielyan 2021
 " for neovim
 " 1 " mkdir -p ~/.local/share/nvim
@@ -41,9 +36,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-multiple-cursors'
-"Plug 'junegunn/goyo.vim'
+Plug 'peterhoeg/vim-qml'
 Plug 'coldfix/hexHighlight'
-"Plug 'scrooloose/nerdtree'
 Plug 'rking/ag.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'gruvbox-community/gruvbox'
@@ -54,31 +48,27 @@ Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'vhdirk/vim-cmake'
 Plug 'tomasr/molokai'
 Plug 'navarasu/onedark.nvim'
-"Plug 'bfrg/vim-cpp-modern'
 Plug 'neoclide/coc.nvim', {'tag' : 'v0.0.81'}
-"Plug 'puremourning/vimspector'
-"let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 
 call plug#end()
 
-
 " COC CONFIG
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " Use <c-space> to trigger completion.
 if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
+    inoremap <silent><expr> <c-space> coc#refresh()
 else
-  inoremap <silent><expr> <c-@> coc#refresh()
+    inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
 " Goto * navigation.
@@ -134,20 +124,16 @@ let g:multi_cursor_next_key            = '<C-n>'
 let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
-set background=dark
+
+"set background=dark
 if exists('+termguicolors')
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
-  endif
-
-if &term == "alacritty"        
-  let &term = "xterm-256color"
 endif
 
 let g:onedark_config = {
-    \ 'style': 'darker',
-\}
+            \ 'style': 'dark',
+            \}
 syntax on
 colorscheme onedark
-"color onedark
