@@ -22,8 +22,8 @@ install_packages:
 				 openssh-server mosh neofetch htop nmap ninja-build cargo libtool \
 				 picocom resolvconf socat sl sqlite stlink-tools vim wget chrome-gnome-shell \
 				 pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev tmux \
-				 mesa-common-dev libglu1-mesa-dev libsdl2-2.0 libsdl2-dev bear autoreconf libgflags2.2 libgflags-dev\
-	#git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+				 mesa-common-dev libglu1-mesa-dev libsdl2-2.0 libsdl2-dev bear libgflags2.2 libgflags-dev\
+				 fonts-powerline btop libfuse2 \
 
 	# snap packages
 	echo "INSTALLING SNAP PACKAGES"
