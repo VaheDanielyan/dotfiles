@@ -41,15 +41,11 @@ Plug 'coldfix/hexHighlight'
 Plug 'rking/ag.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'gruvbox-community/gruvbox'
-"Plug 'joshdick/onedark.vim'
-"Plug 'gosukiwi/vim-atom-dark'
-Plug '~/Documents/Work/temple/'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'vhdirk/vim-cmake'
-Plug 'tomasr/molokai'
 Plug 'navarasu/onedark.nvim'
 Plug 'neoclide/coc.nvim', {'tag' : 'v0.0.81'}
-
+"Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+"Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 call plug#end()
 
 " COC CONFIG
