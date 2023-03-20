@@ -7,3 +7,5 @@
 	prompt = false
 [safe]
 	directory = /home/daniev/workspace/meghu/LCB
+[init]
+	defaultBranch = master
