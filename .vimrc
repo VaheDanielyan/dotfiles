@@ -1,8 +1,10 @@
 " Vahe Danielyan 2021
+"
 " for neovim
 " 1 " mkdir -p ~/.local/share/nvim
 " 2 " ln -s ~/.vim ~/.local/share/nvim/site 
 " 3 " ln -s ~/.vimrc .config/nvim/init.vim
+"
 set tabstop=4 softtabstop=4
 set encoding=UTF-8
 set shiftwidth=4
@@ -18,7 +20,6 @@ set cmdheight=2
 set updatetime=300
 
 "plugin manager
-set encoding=UTF-8
 let vim_plug_just_installed = 0
 let vim_plug_path = expand('~/.vim/autoload/plug.vim')
 if !filereadable(vim_plug_path)
@@ -38,26 +39,25 @@ Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'peterhoeg/vim-qml'
 Plug 'coldfix/hexHighlight'
-Plug 'rking/ag.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'gruvbox-community/gruvbox'
-Plug 'vhdirk/vim-cmake'
 Plug 'navarasu/onedark.nvim'
-Plug 'neoclide/coc.nvim', {'tag' : 'v0.0.81'}
-"Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-"Plug 'neoclide/coc.nvim', {'branch' : 'release'}
+Plug 'neoclide/coc.nvim', {'branch' : 'release'}
+
 call plug#end()
 
 " COC CONFIG
 inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " Use <c-space> to trigger completion.
