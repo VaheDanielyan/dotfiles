@@ -10,11 +10,6 @@
         "args": ["start"],
         "filetypes": ["sh"]
     },
-    "clangd": {
-      "command": "clangd-12",
-      "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
-      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
-    },
     "cmake": {
       "command": "cmake-language-server",
       "filetypes": ["cmake"],
@@ -24,6 +19,12 @@
       "initializationOptions": {
         "buildDirectory": "build"
       }
+    },
+    "clangd": {
+        "command": "clangd-15",
+        "args": ["--background-index"],
+        "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".clangd"],
+        "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
     },
     "python": {
     "command": "python3",
