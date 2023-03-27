@@ -1,12 +1,5 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
-######################################################################
-#
-#
-#           
-#
-#
-######################################################################
-#           Vahe Danielyan 2021. danielyan.vahe@gmail.kjcom
+# Vahe Danielyan 2021. danielyan.vahe@gmail.kjcom
 
 
 #shopt options
@@ -19,6 +12,8 @@ HISTSIZE=30000
 HISTCONTROL=ignoreboth
 HISTFILESIZE=30000
 export LC_ALL=en_US.UTF-8
+export PYTHONSTARTUP=$HOME/.pythonstartup
+export PYTHONPATH="${PYTHONPATH}:/usr/bin/python3.10"
 
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -26,18 +21,7 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
-esac
-
-case "$TERM" in
-    xterm*|rxvt*)
-        PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-        ;;
-    *)
-        ;;
-esac
-export TERM="xterm-256color"
+export TERM="tmux-256color"
 
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -70,6 +54,7 @@ alias ubashrc='source ~/.bashrc'
 alias clangd='clangd-12'
 alias python='python3'
 alias work='cd /home/daniev/workspace'
+alias arinjsimloc='python3 ~/workspace/tools/ardupilot/Tools/autotest/sim_vehicle.py -f plane -v ArduPlane -m "--out 127.0.0.1:14550 --out 127.0.0.1:14552" -L Arinj'
 
 force_color_prompt=yes
 
