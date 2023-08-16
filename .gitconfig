@@ -1,11 +1,13 @@
 [user]
-	email = danielyan.vahe@gmail.com
+	email = vahe.danielyan@aerodynamics.am
     name = Vahe Danielyan
-[diff]
-	tool = nvim -d
 [difftool]
-	prompt = false
-[safe]
-	directory = /home/daniev/workspace/meghu/LCB
+    prompt = false
+[diff]
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [init]
 	defaultBranch = master
+[doff]
+	path = nvim
