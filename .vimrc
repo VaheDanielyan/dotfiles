@@ -19,6 +19,8 @@ set wildmenu
 set cmdheight=1
 set updatetime=300
 
+let mapleader = " "
+
 "plugin manager
 let vim_plug_just_installed = 0
 let vim_plug_path = expand('~/.vim/autoload/plug.vim')
@@ -34,6 +36,8 @@ if vim_plug_just_installed " manually load vim-plug the first time
 endif
 call plug#begin('~/.vim/plugged')
 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-multiple-cursors'
@@ -145,6 +149,14 @@ let g:onedark_config = {
             \ 'style': 'dark',
             \}
 syntax on
+
+if has('nvim')
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fj <cmd>lua require('telescope.builtin').git_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+endif
 
 if has('nvim')
 colorscheme onedark
