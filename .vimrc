@@ -41,6 +41,7 @@ Plug 'peterhoeg/vim-qml'
 Plug 'coldfix/hexHighlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'navarasu/onedark.nvim'
+Plug 'gosukiwi/vim-atom-dark'
 Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
@@ -127,11 +128,13 @@ let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
 
+if has('nvim')
 lua << END
 require('lualine').setup()
 END
+endif
 
-"set background=dark
+set background=dark
 if exists('+termguicolors')
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -142,5 +145,8 @@ let g:onedark_config = {
             \ 'style': 'dark',
             \}
 syntax on
+
+if has('nvim')
 colorscheme onedark
+endif
 
