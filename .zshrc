@@ -98,7 +98,7 @@ PROMPT="%(?.%F{magenta}.%F{red})${prompt_symbol}%f "
 
 history() { fc -lim "*$@*" 1 }
 # In case fzf-history-widget does not work
-# bindkey '^r' history-incremental-search-backward
+bindkey '^r' history-incremental-search-backward
 
 [ -f /usr/bin/fortune ] && [ -f /usr/bin/cowsay ] && fortune | cowsay
 bindkey "^?" backward-delete-char
