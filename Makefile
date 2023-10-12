@@ -41,6 +41,11 @@ install_packages:
 	pip install python-language-server
 	pip install cmake-language-server
 	# TODO. add node install for npm i -g bash-language-server
+
+.PHONY: install_udev
+install_udev:
+	@echo "Installing udev rules, please enter sudo password"
+	sudo cp -r ./udev/rules.d /etc/udev/
 	
 .PHONY : install_alacritty
 install_alacritty:
