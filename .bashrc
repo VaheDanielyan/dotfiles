@@ -10,6 +10,7 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;3
 HISTSIZE=30000
 HISTCONTROL=ignoreboth
 HISTFILESIZE=30000
+
 export LC_ALL=en_US.UTF-8
 export PYTHONSTARTUP=$HOME/.pythonstartup
 export PYTHONPATH="${PYTHONPATH}:/usr/bin/python3.10"
@@ -78,8 +79,6 @@ if ! shopt -oq posix; then
     fi
 fi
 
-shopt -s autocd
-. "$HOME/.cargo/env"
 export EDITOR=nvim
 
 export NVM_DIR="$HOME/.nvm"
