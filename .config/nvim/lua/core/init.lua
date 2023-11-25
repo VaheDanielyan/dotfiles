@@ -21,4 +21,7 @@ vim.opt.cmdheight = 1
 vim.opt.updatetime = 50
 vim.opt.scrolloff = 8
 
-vim.cmd.colorscheme("onedark")
+require('onedark').setup {
+    style = 'darker'
+}
+require('onedark').load()
