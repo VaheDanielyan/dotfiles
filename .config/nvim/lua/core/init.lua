@@ -21,7 +21,8 @@ vim.opt.cmdheight = 1
 vim.opt.updatetime = 50
 vim.opt.scrolloff = 8
 
-require('onedark').setup {
-    style = 'darker'
-}
-require('onedark').load()
+vim.cmd.colorscheme("onedark")
+
+vim.opt.foldlevel = 99
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"

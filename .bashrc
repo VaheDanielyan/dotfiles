@@ -1,5 +1,5 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
-# Vahe Danielyan 2021. danielyan.vahe@gmail.kjcom
+# Vahe Danielyan 2021. danielyan.vahe@gmail.com
 
 #shopt options
 #shopt -s histappend shopt -s checkwinsize
