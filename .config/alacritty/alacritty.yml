@@ -64,7 +64,7 @@ colors:
     cyan:    '0x56b6c2'
     white:   '0x828791'
 window:
-    opacity: 0.9
+    opacity: 0.98
 
 shell:
   program: /bin/zsh
