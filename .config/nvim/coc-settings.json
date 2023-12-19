@@ -1,5 +1,10 @@
 {
   "languageserver": {
+    "rust": {
+        "command": "rust-analyzer",
+        "filetypes": ["rust", "rs"],
+        "rootPatterns": ["Cargo.toml"]
+    },
     "golang": {
         "command": "gopls",
         "rootPatterns": ["go.mod"],
@@ -22,7 +27,7 @@
     },
     "clangd": {
         "command": "clangd-15",
-        "args": ["--background-index"],
+        "args": ["--background-index", "--header-insertion=never"],
         "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".clangd"],
         "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
     },
