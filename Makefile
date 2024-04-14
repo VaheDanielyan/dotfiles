@@ -87,4 +87,3 @@ shell-extentions:
 all : stow install_packages install_alacritty install_visual
 	echo "DONE"
 
-

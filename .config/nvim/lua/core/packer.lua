@@ -12,21 +12,28 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
-	use ('wbthomason/packer.nvim')
-	use ('terryma/vim-multiple-cursors')
-	use ('nvim-lua/plenary.nvim')
-	use ('navarasu/onedark.nvim')
+    use({
+        "aserowy/tmux.nvim",
+        config = function() return require("tmux").setup() end
+    })
+    use ('wbthomason/packer.nvim')
+    use ('terryma/vim-multiple-cursors')
+    use ('nvim-lua/plenary.nvim')
+    use ('navarasu/onedark.nvim')
     use ({'neoclide/coc.nvim', branch = 'release'})
-	use ('nvim-lualine/lualine.nvim')
-	use ('nvim-tree/nvim-web-devicons')
-	use ({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
-	use ('ThePrimeagen/harpoon')
+    use ('nvim-lualine/lualine.nvim')
+    use ('nvim-tree/nvim-web-devicons')
+    use ({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
+    use ('ThePrimeagen/harpoon')
     use ('f-person/git-blame.nvim')
     use ('nvim-tree/nvim-tree.lua')
     use ('peterhoeg/vim-qml')
+    --- use('ingydotnet/yaml-vim')
+    --- use ('jakski/vim-yaml')
+    use ('mrk21/yaml-vim')
 
     use ({ "nvim-telescope/telescope-file-browser.nvim",
-    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }})
+        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }})
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -34,14 +41,14 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-    use {
-        "cuducos/yaml.nvim",
-        ft = { "yaml" }, -- optional
-        requires = {
-            "nvim-treesitter/nvim-treesitter",
-            "nvim-telescope/telescope.nvim" -- optional
-        },
-    }
+    -- use {
+    --     "cuducos/yaml.nvim",
+    --     ft = { "yaml" }, -- optional
+    --     requires = {
+    --         "nvim-treesitter/nvim-treesitter",
+    --         "nvim-telescope/telescope.nvim" -- optional
+    --     },
+    -- }
 
     use {
         'fei6409/log-highlight.nvim',
