@@ -96,9 +96,10 @@ add-zsh-hook precmd prompt_mimir_cmd
 prompt_symbol='→ '
 PROMPT="%(?.%F{magenta}.%F{red})${prompt_symbol}%f "
 
+[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
 history() { fc -lim "*$@*" 1 }
 # In case fzf-history-widget does not work
-bindkey '^r' history-incremental-search-backward
+#bindkey '^r' history-incremental-search-backward
 
 [ -f /usr/bin/fortune ] && [ -f /usr/bin/cowsay ] && fortune | cowsay
 bindkey "^?" backward-delete-char

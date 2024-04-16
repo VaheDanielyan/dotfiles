@@ -18,7 +18,7 @@ install_packages:
 	sudo apt-get update && sudo apt-get upgrade
 	sudo apt-get install git net-tools cmake neovim gcc curl tree \
 				 gimp gnome-shell-extensions gnome-tweaks clangd-12 \
-				 libasio-dev python3 python3-pip libreoffice sassc libeigen3-dev \
+				 libasio-dev python3 python3-pip libreoffice sassc libeigen3-dev fzf \
 				 openssh-server mosh neofetch htop nmap ninja-build cargo libtool \
 				 picocom resolvconf socat sl sqlite stlink-tools vim wget chrome-gnome-shell \
 				 pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev tmux \
@@ -86,4 +86,3 @@ shell-extentions:
 .PHONY : all
 all : stow install_packages install_alacritty install_visual
 	echo "DONE"
-
