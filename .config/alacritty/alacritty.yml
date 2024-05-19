@@ -10,20 +10,20 @@ window:
     general: Alacritty
 
 scrolling:
-  history: 50000
+  history: 100000
 
 font:
   normal:
-    family: Jetbrains Mono
+    family: ComicCode
     style: regular
   bold:
-    family: Jetbrains Mono
+    family: ComicCode
     style: Bold
   italic:
-    family: Jetbrains Mono
+    family: ComicCode
     style: Italic
   bold_italic:
-    family: Jetbrains Mono
+    family: ComicCode
     style: Bold Italic
   size: 11.5
   offset:
@@ -68,7 +68,7 @@ colors:
     white:   '0x828791'
 window:
   decorations: "None"
-  opacity: 0.99
+  opacity: 1
   padding: { x = 4, y = 4}
   dynamic_padding: true
 

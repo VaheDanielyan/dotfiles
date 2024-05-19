@@ -21,7 +21,8 @@ vim.opt.cmdheight = 1
 vim.opt.updatetime = 50
 vim.opt.scrolloff = 8
 
-vim.cmd.colorscheme("onedark")
+--- vim.cmd.colorscheme("onedark")
+vim.cmd("colorscheme onedark_vivid")
 
 vim.opt.foldlevel = 99
 vim.opt.foldmethod = "expr"

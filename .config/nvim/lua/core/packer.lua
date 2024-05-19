@@ -19,7 +19,6 @@ return require('packer').startup(function(use)
     use ('wbthomason/packer.nvim')
     use ('terryma/vim-multiple-cursors')
     use ('nvim-lua/plenary.nvim')
-    use ('navarasu/onedark.nvim')
     use ({'neoclide/coc.nvim', branch = 'release'})
     use ('nvim-lualine/lualine.nvim')
     use ('nvim-tree/nvim-web-devicons')
@@ -29,27 +28,16 @@ return require('packer').startup(function(use)
     use ('nvim-tree/nvim-tree.lua')
     use ('peterhoeg/vim-qml')
     use({"iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end,})
-    --- use('ingydotnet/yaml-vim')
-    --- use ('jakski/vim-yaml')
     use ('mrk21/yaml-vim')
 
     use ({ "nvim-telescope/telescope-file-browser.nvim",
         requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }})
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        -- or                            , branch = '0.1.x',
+        'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-
-    -- use {
-    --     "cuducos/yaml.nvim",
-    --     ft = { "yaml" }, -- optional
-    --     requires = {
-    --         "nvim-treesitter/nvim-treesitter",
-    --         "nvim-telescope/telescope.nvim" -- optional
-    --     },
-    -- }
+    use "olimorris/onedarkpro.nvim"
 
     use {
         'fei6409/log-highlight.nvim',
