@@ -91,27 +91,27 @@ key_bindings:
   - { key: L, mods: Control, action: ClearLogNotice }
   - { key: L, mods: Control, chars: "\f" }
   - {
-      key: PageUp,
-      mods: None,
-      action: ScrollPageUp,
-      mode: ~Alt
+    key: PageUp,
+    mods: None,
+    action: ScrollPageUp,
+    mode: ~Alt
     }
   - {
-      key: PageDown,
-      mods: None,
-      action: ScrollPageDown,
-      mode: ~Alt
+    key: PageDown,
+    mods: None,
+    action: ScrollPageDown,
+    mode: ~Alt
     }
   - {
-      key: Home,
-      mods: Shift,
-      action: ScrollToTop,
-      mode: ~Alt
+    key: Home,
+    mods: Shift,
+    action: ScrollToTop,
+    mode: ~Alt
     }
   - {
-      key: End,
-      mods: Shift,
-      action: ScrollToBottom,
-      mode: ~Alt
+    key: End,
+    mods: Shift,
+    action: ScrollToBottom,
+    mode: ~Alt
     }
 theme: Oxide

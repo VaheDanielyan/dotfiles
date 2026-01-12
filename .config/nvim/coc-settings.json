@@ -27,10 +27,10 @@
             }
         },
         "clangd": {
-            "command": "clangd-15",
+            "command": "clangd-18",
             "args": ["--background-index", "--header-insertion=never"],
             "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".clangd"],
-            "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+            "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp", "ino"]
         },
         "python": {
             "command": "python3",

@@ -16,7 +16,10 @@ return require('packer').startup(function(use)
         "aserowy/tmux.nvim",
         config = function() return require("tmux").setup() end
     })
+    use('daeyun/vim-matlab')
     use ('wbthomason/packer.nvim')
+    use ('Mofiqul/dracula.nvim')
+    use ('tpope/vim-fugitive')
     use ('terryma/vim-multiple-cursors')
     use ('nvim-lua/plenary.nvim')
     use ({'neoclide/coc.nvim', branch = 'release'})
