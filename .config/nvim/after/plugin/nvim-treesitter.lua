@@ -4,7 +4,7 @@ require'nvim-treesitter.configs'.setup {
                         "cuda", "diff", "dockerfile", "devicetree", "git_config",
                         "git_rebase", "gitattributes", "gitcommit", "gitignore",
                         "lua", "markdown", "ninja", "proto", "python", "yaml",
-                        "sql", "vim", "vimdoc", "hjson", "rust", "go"},
+                        "sql", "vim", "vimdoc", "hjson", "rust", "go", "json"},
     highlight = {
         enable = true,
     },

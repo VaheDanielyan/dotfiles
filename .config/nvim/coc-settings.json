@@ -16,18 +16,8 @@
             "args": ["start"],
             "filetypes": ["sh"]
         },
-        "cmake": {
-            "command": "cmake-language-server",
-            "filetypes": ["cmake"],
-            "rootPatterns": [
-                "build/"
-            ],
-            "initializationOptions": {
-                "buildDirectory": "build"
-            }
-        },
         "clangd": {
-            "command": "clangd-18",
+            "command": "clangd",
             "args": ["--background-index", "--header-insertion=never"],
             "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".clangd"],
             "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp", "ino"]

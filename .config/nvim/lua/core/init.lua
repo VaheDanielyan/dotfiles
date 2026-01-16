@@ -22,7 +22,7 @@ vim.opt.updatetime = 50
 vim.opt.scrolloff = 8
 
 --- vim.cmd.colorscheme("onedark")
-vim.cmd("colorscheme onedark_vivid")
+vim.cmd("colorscheme gruvbox")
 
 vim.opt.foldlevel = 99
 vim.opt.foldmethod = "expr"
