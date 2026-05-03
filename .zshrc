@@ -4,6 +4,7 @@ autoload -U colors && colors
 HISTSIZE=40000
 SAVEHIST=40000
 HISTFILE=~/.cache/zsh/history
+mkdir -p ~/.cache/zsh
 setopt    appendhistory     #Append history to the history file (no overwriting)
 setopt    sharehistory      #Share history across terminals
 setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
@@ -27,7 +28,12 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
-    
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    export CLICOLOR=1
+    export LSCOLORS=ExFxBxDxCxegedabagacad
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
 fi
 
 # Use vim keys in tab complete menu:
@@ -83,25 +89,42 @@ alias vim='nvim'
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
 # Load zsh-syntax-highlighting; should be last.
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 [ -f "$HOME/.config/envrc" ] && source "$HOME/.config/envrc"
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
-# Mimir git prompt
-autoload -Uz add-zsh-hook
-prompt_mimir_cmd() { [ $(uname -m) = "x86_64" ] && mimir_zsh || mimir_armv7l}
-add-zsh-hook precmd prompt_mimir_cmd
+# Mimir git prompt (disabled)
+# autoload -Uz add-zsh-hook
+# prompt_mimir_cmd() {
+#     case "$(uname -m)" in
+#         x86_64) mimir_zsh ;;
+#         arm64|aarch64) mimir_arm64 2>/dev/null || mimir_armv7l 2>/dev/null ;;
+#     esac
+# }
+# add-zsh-hook precmd prompt_mimir_cmd
 
 prompt_symbol='→ '
 PROMPT="%(?.%F{magenta}.%F{red})${prompt_symbol}%f "
 
-[ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
+if [ -f /usr/share/fzf/shell/key-bindings.zsh ]; then
+    source /usr/share/fzf/shell/key-bindings.zsh
+elif [ -f /opt/homebrew/opt/fzf/shell/key-bindings.zsh ]; then
+    source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+elif [ -f /usr/local/opt/fzf/shell/key-bindings.zsh ]; then
+    source /usr/local/opt/fzf/shell/key-bindings.zsh
+fi
 history() { fc -lim "*$@*" 1 }
 # In case fzf-history-widget does not work
 #bindkey '^r' history-incremental-search-backward
 
-[ -f /usr/bin/fortune ] && [ -f /usr/bin/cowsay ] && fortune | cowsay
+command -v fortune >/dev/null && command -v cowsay >/dev/null && fortune | cowsay
 bindkey "^?" backward-delete-char
 
 # share history across all zsh sessions

@@ -1,16 +1,13 @@
 [env]
 TERM = "alacritty"
-WINIT_X11_SCALE_FACTOR = "1"
 
 [window]
-decorations = "None"
+decorations = "Buttonless"
 opacity = 1
 dynamic_padding = true
 startup_mode = "Maximized"
 title = "Alacritty"
-[window.class]
-instance = "Alacritty"
-general = "Alacritty"
+option_as_alt = "Both"
 
 [scrolling]
 history = 100000
@@ -110,11 +107,6 @@ mods = "Control|Shift"
 action = "Copy"
 
 [[keyboard.bindings]]
-key = "Insert"
-mods = "Shift"
-action = "PasteSelection"
-
-[[keyboard.bindings]]
 key = "Key0"
 mods = "Control"
 action = "ResetFontSize"
@@ -128,11 +120,6 @@ action = "IncreaseFontSize"
 key = "Plus"
 mods = "Control"
 action = "IncreaseFontSize"
-
-[[keyboard.bindings]]
-key = "Minus"
-mods = "Control"
-action = "DecreaseFontSize"
 
 [[keyboard.bindings]]
 key = "Minus"
