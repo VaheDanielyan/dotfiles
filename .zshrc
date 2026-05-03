@@ -100,16 +100,6 @@ fi
 [ -f "$HOME/.config/envrc" ] && source "$HOME/.config/envrc"
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
-# Mimir git prompt (disabled)
-# autoload -Uz add-zsh-hook
-# prompt_mimir_cmd() {
-#     case "$(uname -m)" in
-#         x86_64) mimir_zsh ;;
-#         arm64|aarch64) mimir_arm64 2>/dev/null || mimir_armv7l 2>/dev/null ;;
-#     esac
-# }
-# add-zsh-hook precmd prompt_mimir_cmd
-
 prompt_symbol='→ '
 PROMPT="%(?.%F{magenta}.%F{red})${prompt_symbol}%f "
 
