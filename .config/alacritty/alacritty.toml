@@ -3,7 +3,7 @@ TERM = "alacritty"
 
 [window]
 decorations = "Buttonless"
-opacity = 1
+opacity = 0.95
 dynamic_padding = true
 startup_mode = "Maximized"
 title = "Alacritty"
@@ -13,29 +13,29 @@ option_as_alt = "Both"
 history = 100000
 
 [font]
-size = 10
+size = 15
 [font.normal]
-family = "ComicCode"
-style = "regular"
+family = "ComicCode Nerd Font Mono"
+style = "Regular"
 [font.bold]
-family = "ComicCode"
+family = "ComicCode Nerd Font Mono"
 style = "Bold"
 [font.italic]
-family = "ComicCode"
+family = "ComicCode Nerd Font Mono"
 style = "Italic"
 [font.bold_italic]
-family = "ComicCode"
+family = "ComicCode Nerd Font Mono"
 style = "Bold Italic"
-[font.offset]
-x = 0
-y = 1
+#[font.offset]
+#x = 0
+#y = 1
 
 # Default colors
-[colors.primary]
-# hard contrast background = = '#1d2021'
-background = '#282828'
-# soft contrast background = = '#32302f'
-foreground = '#ebdbb2'
+#[colors.primary]
+## hard contrast background = = '#1d2021'
+#background = '#282828'
+## soft contrast background = = '#32302f'
+#foreground = '#ebdbb2'
 
 # Normal colors
 [colors.normal]
@@ -47,8 +47,8 @@ blue    = '#458588'
 magenta = '#b16286'
 cyan    = '#689d6a'
 white   = '#a89984'
-
-# Bright colors
+#
+## Bright colors
 [colors.bright]
 black   = '#928374'
 red     = '#fb4934'
@@ -95,35 +95,26 @@ white   = '#ebdbb2'
 
 [terminal.shell]
 program = "/bin/zsh"
-
-[[keyboard.bindings]]
-key = "V"
-mods = "Control|Shift"
-action = "Paste"
-
-[[keyboard.bindings]]
-key = "C"
-mods = "Control|Shift"
-action = "Copy"
+args = ["-l"]
 
 [[keyboard.bindings]]
 key = "Key0"
-mods = "Control"
+mods = "Super"
 action = "ResetFontSize"
 
 [[keyboard.bindings]]
 key = "Equals"
-mods = "Control"
+mods = "Super"
 action = "IncreaseFontSize"
 
 [[keyboard.bindings]]
 key = "Plus"
-mods = "Control"
+mods = "Super"
 action = "IncreaseFontSize"
 
 [[keyboard.bindings]]
 key = "Minus"
-mods = "Control"
+mods = "Super"
 action = "DecreaseFontSize"
 
 [[keyboard.bindings]]
@@ -140,11 +131,6 @@ action = "Paste"
 key = "Copy"
 mods = "None"
 action = "Copy"
-
-[[keyboard.bindings]]
-key = "L"
-mods = "Control"
-action = "ClearLogNotice"
 
 [[keyboard.bindings]]
 key = "L"
