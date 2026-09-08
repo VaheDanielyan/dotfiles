@@ -1,0 +1,17 @@
+# macOS metadata and local agent settings
+.DS_Store
+/.claude/settings.local.json
+
+# Application state and downloaded plugins (the home directories are symlinked here)
+/.local/share/
+/.local/state/
+/.config/coc/
+/.config/nvim/plugin/packer_compiled.lua
+
+# Locally installed binaries
+/.local/bin/codex
+/.local/bin/codex-code-mode-host
+
+# Personal projects and synced files; keep the tracked wallpaper
+/workspace/*
+!/workspace/wallpapers/

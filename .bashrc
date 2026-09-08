@@ -12,7 +12,6 @@ HISTCONTROL=ignoreboth
 HISTFILESIZE=30000
 export LC_ALL=en_US.UTF-8
 export PYTHONSTARTUP=$HOME/.pythonstartup
-export PYTHONPATH="${PYTHONPATH}:/usr/bin/python3.10"
 
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -20,7 +19,6 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-export TERM="tmux-256color"
 
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -44,16 +42,14 @@ alias l='ls -CF'
 #preference aliases
 alias untar='tar -xvzf'
 alias ipar='curl ipinfo.io/ip'
-alias ipal='ifconfig getifaddr en0'
-alias sag='sudo apt-get'
+alias ipal='ipconfig getifaddr en0'
 alias vim='nvim'
 alias vimrc='vim ~/.vimrc'
 alias vimdiff='nvim -d'
 alias bashrc='vim ~/.bashrc'
 alias ubashrc='source ~/.bashrc'
-alias clangd='clangd-12'
 alias python='python3'
-alias work='cd /home/daniev/workspace'
+alias work='cd "$HOME/workspace"'
 
 force_color_prompt=yes
 
@@ -78,8 +74,10 @@ if ! shopt -oq posix; then
     fi
 fi
 
-shopt -s autocd
-. "$HOME/.cargo/env"
+if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
+    shopt -s autocd
+fi
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 export EDITOR=nvim
 
 export NVM_DIR="$HOME/.nvm"

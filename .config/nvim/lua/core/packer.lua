@@ -11,6 +11,11 @@ end
 
 local packer_bootstrap = ensure_packer()
 
+-- Generated loaders contain machine-specific paths; keep them with app data.
+require('packer').init({
+    compile_path = vim.fn.stdpath('data') .. '/site/plugin/packer_compiled.lua',
+})
+
 return require('packer').startup(function(use)
     use({
         "aserowy/tmux.nvim",
